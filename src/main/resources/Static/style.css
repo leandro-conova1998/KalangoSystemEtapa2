@@ -1,0 +1,334 @@
+/* Reset básico e Scroll Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Preto com Efeito Laranja */
+.main-header {
+    background-color: #000000; 
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LOGO DO HEADER SEM FUNDO BRANCO --- */
+.logo img {
+    max-height: 60px;
+    display: block;
+    mix-blend-mode: screen; /* Remove o fundo branco contra o fundo preto */
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+/* Efeito de sombreado laranja ao passar o mouse */
+.nav-menu a:hover {
+    color: #ff6600;
+    text-shadow: 0 0 8px #ff6600, 0 0 15px #ff6600;
+}
+
+.btn-login {
+    background: white;
+    color: #333;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #ff6600;
+    color: white;
+}
+
+/* Banner Principal */
+.hero-banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Galeria de Fotos */
+.content-section {
+    padding: 20px 0;
+}
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.foto-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 350px;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.foto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    color: white;
+}
+
+.tag-laranja {
+    color: #ff6600;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.titulo-sobreposto {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: white;
+}
+
+/* Seção Eventos Parallax Box */
+.parallax-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 40px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/mexico.png'); 
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+.parallax-titulo {
+    font-family: 'Arial Black', sans-serif;
+    color: #ff6600; 
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.parallax-texto {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Seção de Reservas */
+.booking-section {
+    margin: 60px auto;
+}
+
+.booking-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking-header h2 {
+    color: #ff6600;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group input, .form-group select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-send {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background: #e65c00;
+}
+
+/* Rodapé */
+.main-footer {
+    background: #1a1a1a;
+    color: #999;
+    padding: 60px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-grid h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* --- LOGO DO RODAPÉ SEM FUNDO BRANCO --- */
+.footer-logo {
+    max-height: 50px;
+    margin-bottom: 20px;
+    mix-blend-mode: screen; /* Remove o fundo branco contra o fundo escuro do rodapé */
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    line-height: 2;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .galeria-fotos {
+        grid-template-columns: 1fr;
+    }
+    .form-group {
+        flex-direction: column;
+    }
+    .parallax-section {
+        height: auto;
+        padding: 40px 0;
+        background-attachment: scroll;
+    }
+    .parallax-content {
+        padding: 20px;
+    }
+}
